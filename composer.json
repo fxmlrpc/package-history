@@ -1,0 +1,38 @@
+{
+    "name": "fxmlrpc/benchmarks",
+    "description": "Benchmarks for fXmlRpc components",
+    "license": "MIT",
+    "keywords": ["xmlrpc", "xml", "rpc", "benchmarks"],
+    "homepage": "http://fxmlrpc.org",
+    "authors": [
+        {
+            "name": "Lars Strojny",
+            "email": "lstrojny@php.net",
+            "homepage": "http://usrportage.de"
+        },
+        {
+            "name": "Márk Sági-Kazár",
+            "email": "mark.sagikazar@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "athletic/athletic": "^0.1",
+        "fxmlrpc/native-serialization": "dev-initial_import",
+        "fxmlrpc/sax-serialization": "dev-initial_import",
+        "zendframework/zend-xmlrpc": "~2.3.2",
+        "zendframework/zendframework1": "~1.12.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "fXmlRpc\\Benchmark\\": "benchmarks/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
