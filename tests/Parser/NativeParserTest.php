@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the fXmlRpc Serialization package.
+ * This file is part of the fXmlRpc Native Serialization package.
  *
  * (c) Lars Strojny <lstrojny@php.net>
  *
