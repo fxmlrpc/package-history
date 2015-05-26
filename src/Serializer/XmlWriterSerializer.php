@@ -12,8 +12,8 @@
 namespace fXmlRpc\Serialization\Serializer;
 
 
+use fXmlRpc\Serialization\Exception\InvalidTypeException;
 use fXmlRpc\Serialization\ExtensionSupport;
-use fXmlRpc\Serialization\Exception\SerializerException;
 use fXmlRpc\Serialization\Serializer;
 use fXmlRpc\Serialization\Value\Base64;
 
@@ -198,7 +198,7 @@ final class XmlWriterSerializer implements Serializer, ExtensionSupport
                     goto struct;
                 }
             } elseif ($type === 'resource') {
-                throw SerializerException::invalidType($node);
+                throw new InvalidTypeException($node);
             }
         }
 

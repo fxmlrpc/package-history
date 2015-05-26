@@ -11,9 +11,9 @@
 
 namespace fXmlRpc\Serialization\Parser;
 
-use fXmlRpc\Serialization\Exception\ParserException;
+use fXmlRpc\Serialization\Exception\UnexpectedTagException;
 use fXmlRpc\Serialization\Parser;
-use fXmlRpc\Serialization\Value\Base64;
+use fXmlRpc\Serialization\Value\Base64Value;
 
 /**
  * Parser to parse XML responses into its PHP representation using XML Reader extension
@@ -89,7 +89,7 @@ final class XmlReaderParser implements Parser
             if ($nextExpectedElements !== null &&
                 ($flag = isset(${'flag' . $tagName}) ? ${'flag' . $tagName} : -1) &&
                 ($nextExpectedElements & $flag) !== $flag) {
-                throw ParserException::unexpectedTag(
+                throw new UnexpectedTagException(
                     $tagName,
                     $nextExpectedElements,
                     get_defined_vars(),
@@ -305,7 +305,7 @@ final class XmlReaderParser implements Parser
                             break;
 
                         case 'base64':
-                            $value = Base64::deserialize($xml->value);
+                            $value = Base64Value::deserialize($xml->value);
                             break;
 
                         case 'dom':
