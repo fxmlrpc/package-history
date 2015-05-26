@@ -11,7 +11,7 @@
 
 namespace fXmlRpc\Serialization\Serializer;
 
-use fXmlRpc\Serialization\Exception\SerializerException;
+use fXmlRpc\Serialization\Exception\InvalidTypeException;
 use fXmlRpc\Serialization\Serializer;
 use fXmlRpc\Serialization\Value\Base64;
 
@@ -49,7 +49,7 @@ final class NativeSerializer implements Serializer
                     $value = get_object_vars($value);
                 }
             } elseif ($type === 'resource') {
-                throw SerializerException::invalidType($value);
+                throw new InvalidTypeException($value);
             }
 
             array_shift($toBeVisited);

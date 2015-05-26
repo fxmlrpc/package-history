@@ -12,7 +12,7 @@
 namespace fXmlRpc\Serialization\Parser;
 
 use fXmlRpc\Serialization\Parser;
-use fXmlRpc\Serialization\Value\Base64;
+use fXmlRpc\Serialization\Value\Base64Value;
 
 /**
  * Parser to parse XML responses into its PHP representation using XML RPC extension
@@ -45,7 +45,7 @@ final class NativeParser implements Parser
 
                 } elseif ($xmlRpcType === 'base64') {
                     if ($value->scalar !== '') {
-                        $value = Base64::serialize($value->scalar);
+                        $value = Base64Value::serialize($value->scalar);
                     } else {
                         $value = null;
                     }

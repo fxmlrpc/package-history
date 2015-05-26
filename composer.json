@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": ">=5.4",
-        "fxmlrpc/serialization": "dev-initial_import",
+        "fxmlrpc/serialization": "^0.1@dev",
         "ext-xmlrpc": "*"
     },
     "require-dev": {
