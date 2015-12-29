@@ -1,6 +1,6 @@
 {
     "name": "fxmlrpc/serialization-integration-tests",
-    "description": "Serialization integration tests FXMLRPC serialization implementations",
+    "description": "Serialization integration tests for FXMLRPC serialization implementations",
     "license": "MIT",
     "keywords": ["xmlrpc", "xml", "rpc", "serialization"],
     "homepage": "http://fxmlrpc.org",

@@ -2,7 +2,7 @@
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
-**Serialization integration tests FXMLRPC serialization implementations.**
+**Serialization integration tests for FXMLRPC serialization implementations.**
 
 
 ## Install
