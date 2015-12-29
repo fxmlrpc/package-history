@@ -1,19 +1,10 @@
 <?php
 
-/*
- * This file is part of the fXmlRpc SAX Serialization package.
- *
- * (c) Lars Strojny <lstrojny@php.net>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace Fxmlrpc\Serialization\Parser;
 
-namespace fXmlRpc\Serialization\Parser;
-
-use fXmlRpc\Serialization\Exception\UnexpectedTagException;
-use fXmlRpc\Serialization\Parser;
-use fXmlRpc\Serialization\Value\Base64Value;
+use Fxmlrpc\Serialization\Exception\UnexpectedTagException;
+use Fxmlrpc\Serialization\Parser;
+use Fxmlrpc\Serialization\Value\Base64Value;
 
 /**
  * Parser to parse XML responses into its PHP representation using XML Reader extension
@@ -34,7 +25,7 @@ final class XmlReaderParser implements Parser
         $xml->setParserProperty(\XMLReader::VALIDATE, false);
         $xml->setParserProperty(\XMLReader::LOADDTD, false);
 
-// This following assignments are auto-generated using fXmlRpc\Serialization\CodeGenerator\XmlReaderParserBitmaskGenerator
+// This following assignments are auto-generated using Fxmlrpc\Serialization\CodeGenerator\XmlReaderParserBitmaskGenerator
 // Don’t edit manually
         static $flagmethodResponse = 0b000000000000000000000000001;
         static $flagparams = 0b000000000000000000000000010;

@@ -1,17 +1,8 @@
 <?php
 
-/*
- * This file is part of the fXmlRpc SAX Serialization package.
- *
- * (c) Lars Strojny <lstrojny@php.net>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace Fxmlrpc\Serialization\Tests\CodeGenerator;
 
-namespace fXmlRpc\Serialization\Tests\CodeGenerator;
-
-use fXmlRpc\Serialization\CodeGenerator\XmlReaderParserBitmaskGenerator;
+use Fxmlrpc\Serialization\CodeGenerator\XmlReaderParserBitmaskGenerator;
 
 /**
  * @author Lars Strojny <lstrojny@php.net>
@@ -31,7 +22,7 @@ class XmlReaderParserBitmaskGeneratorTest extends \PHPUnit_Framework_TestCase
     public function testGenerateBitmask()
     {
 $code = <<<'EOS'
-// This following assignments are auto-generated using fXmlRpc\Serialization\CodeGenerator\XmlReaderParserBitmaskGenerator
+// This following assignments are auto-generated using Fxmlrpc\Serialization\CodeGenerator\XmlReaderParserBitmaskGenerator
 // Don’t edit manually
 static $flagmethodResponse = 0b000000000000000000000000001;
 static $flagparams = 0b000000000000000000000000010;

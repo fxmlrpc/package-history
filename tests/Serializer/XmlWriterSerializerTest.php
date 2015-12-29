@@ -1,19 +1,10 @@
 <?php
 
-/*
- * This file is part of the fXmlRpc SAX Serialization package.
- *
- * (c) Lars Strojny <lstrojny@php.net>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace Fxmlrpc\Serialization\Tests\Serializer;
 
-namespace fXmlRpc\Serialization\Tests\Serializer;
-
-use fXmlRpc\Serialization\ExtensionSupport;
-use fXmlRpc\Serialization\Serializer\XmlWriterSerializer;
-use fXmlRpc\Serialization\Tests\SerializerTestCase;
+use Fxmlrpc\Serialization\ExtensionSupport;
+use Fxmlrpc\Serialization\Serializer\XmlWriterSerializer;
+use Fxmlrpc\Serialization\Tests\SerializerTestCase;
 
 /**
  * @author Lars Strojny <lstrojny@php.net>
@@ -27,7 +18,7 @@ class XmlWriterSerializerTest extends SerializerTestCase
 
     public function testDisableNilExtension()
     {
-        $this->assertInstanceOf('fXmlRpc\Serialization\ExtensionSupport', $this->serializer);
+        $this->assertInstanceOf('Fxmlrpc\Serialization\ExtensionSupport', $this->serializer);
         $nilXml = '<?xml version="1.0" encoding="UTF-8"?>
                 <methodCall>
                     <methodName>method</methodName>

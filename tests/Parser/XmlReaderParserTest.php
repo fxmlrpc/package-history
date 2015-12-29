@@ -1,18 +1,9 @@
 <?php
 
-/*
- * This file is part of the fXmlRpc SAX Serialization package.
- *
- * (c) Lars Strojny <lstrojny@php.net>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace Fxmlrpc\Serialization\Tests\Parser;
 
-namespace fXmlRpc\Serialization\Tests\Parser;
-
-use fXmlRpc\Serialization\Parser\XmlReaderParser;
-use fXmlRpc\Serialization\Tests\ParserTestCase;
+use Fxmlrpc\Serialization\Parser\XmlReaderParser;
+use Fxmlrpc\Serialization\Tests\ParserTestCase;
 
 /**
  * @author Lars Strojny <lstrojny@php.net>
@@ -209,7 +200,7 @@ class XmlReaderParserTest extends ParserTestCase
         $isFault = true;
 
         $this->setExpectedException(
-            'fXmlRpc\Serialization\Exception\UnexpectedTagException',
+            'Fxmlrpc\Serialization\Exception\UnexpectedTagException',
             'Invalid XML. Expected one of "params", "fault", got "invalidTag" on depth 1 (context: "<invalidTag/>")'
         );
         $this->parser->parse($string, $isFault);

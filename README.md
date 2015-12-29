@@ -1,14 +1,13 @@
-# fXmlRpc SAX Serialization
+# FXMLRPC SAX Serialization
 
 [![Latest Version](https://img.shields.io/github/release/fxmlrpc/sax-serialization.svg?style=flat-square)](https://github.com/fxmlrpc/sax-serialization/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Build Status](https://img.shields.io/travis/fxmlrpc/sax-serialization.svg?style=flat-square)](https://travis-ci.org/fxmlrpc/sax-serialization)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/fxmlrpc/sax-serialization.svg?style=flat-square)](https://scrutinizer-ci.com/g/fxmlrpc/sax-serialization)
 [![Quality Score](https://img.shields.io/scrutinizer/g/fxmlrpc/sax-serialization.svg?style=flat-square)](https://scrutinizer-ci.com/g/fxmlrpc/sax-serialization)
-[![HHVM Status](https://img.shields.io/hhvm/fxmlrpc/sax-serialization.svg?style=flat-square)](http://hhvm.h4cc.de/package/fxmlrpc/sax-serialization)
 [![Total Downloads](https://img.shields.io/packagist/dt/fxmlrpc/sax-serialization.svg?style=flat-square)](https://packagist.org/packages/fxmlrpc/sax-serialization)
 
-**SAX serialization logic for fXmlRpc.**
+**SAX serialization logic for FXMLRPC.**
 
 
 ## Install
@@ -22,13 +21,13 @@ $ composer require fxmlrpc/sax-serialization
 
 ## Usage
 
-This is the SAX (using XmlReader and XmlWriter) implementation of serialization logic used in fXmlRpc.
+This is the SAX (using XmlReader and XmlWriter) implementation of serialization logic used in FXMLRPC.
 
 
 ## Testing
 
 ``` bash
-$ phpunit
+$ composer test
 ```
 
 
