@@ -6,7 +6,7 @@ use Fxmlrpc\Serialization\Parser;
 use Fxmlrpc\Serialization\Value\Base64Value;
 
 /**
- * Parser to parse XML responses into its PHP representation using XML RPC extension
+ * Parser to parse XML responses into its PHP representation using XML RPC extension.
  *
  * @author Lars Strojny <lstrojny@php.net>
  */
@@ -23,7 +23,6 @@ final class NativeParser implements Parser
 
         $toBeVisited = [&$result];
         while (isset($toBeVisited[0]) && $value = &$toBeVisited[0]) {
-
             $type = gettype($value);
             if ($type === 'object') {
                 $xmlRpcType = $value->{'xmlrpc_type'};
@@ -33,7 +32,6 @@ final class NativeParser implements Parser
                         $value->scalar,
                         isset($timezone) ? $timezone : $timezone = new \DateTimeZone('UTC')
                     );
-
                 } elseif ($xmlRpcType === 'base64') {
                     if ($value->scalar !== '') {
                         $value = Base64Value::serialize($value->scalar);
@@ -41,7 +39,6 @@ final class NativeParser implements Parser
                         $value = null;
                     }
                 }
-
             } elseif ($type === 'array') {
                 foreach ($value as &$element) {
                     $toBeVisited[] = &$element;
