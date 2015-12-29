@@ -1,18 +1,9 @@
 <?php
 
-/*
- * This file is part of the fXmlRpc Native Serialization package.
- *
- * (c) Lars Strojny <lstrojny@php.net>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace Fxmlrpc\Serialization\Parser;
 
-namespace fXmlRpc\Serialization\Parser;
-
-use fXmlRpc\Serialization\Parser;
-use fXmlRpc\Serialization\Value\Base64Value;
+use Fxmlrpc\Serialization\Parser;
+use Fxmlrpc\Serialization\Value\Base64Value;
 
 /**
  * Parser to parse XML responses into its PHP representation using XML RPC extension

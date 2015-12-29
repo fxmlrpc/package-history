@@ -1,19 +1,10 @@
 <?php
 
-/*
- * This file is part of the fXmlRpc Native Serialization package.
- *
- * (c) Lars Strojny <lstrojny@php.net>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace Fxmlrpc\Serialization\Serializer;
 
-namespace fXmlRpc\Serialization\Serializer;
-
-use fXmlRpc\Serialization\Exception\InvalidTypeException;
-use fXmlRpc\Serialization\Serializer;
-use fXmlRpc\Serialization\Value\Base64;
+use Fxmlrpc\Serialization\Exception\InvalidTypeException;
+use Fxmlrpc\Serialization\Serializer;
+use Fxmlrpc\Serialization\Value\Base64;
 
 /**
  * Serializer creates XML from native PHP types using XML RPC extension

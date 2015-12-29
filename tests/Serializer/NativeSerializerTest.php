@@ -1,18 +1,9 @@
 <?php
 
-/*
- * This file is part of the fXmlRpc Native Serialization package.
- *
- * (c) Lars Strojny <lstrojny@php.net>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace Fxmlrpc\Serialization\Tests\Serializer;
 
-namespace fXmlRpc\Serialization\Tests\Serializer;
-
-use fXmlRpc\Serialization\Serializer\NativeSerializer;
-use fXmlRpc\Serialization\Tests\SerializerTestCase;
+use Fxmlrpc\Serialization\Serializer\NativeSerializer;
+use Fxmlrpc\Serialization\Tests\SerializerTestCase;
 
 /**
  * @author Lars Strojny <lstrojny@php.net>
