@@ -201,8 +201,9 @@ class XmlReaderParserTest extends ParserTestCase
 
         $this->setExpectedException(
             'Fxmlrpc\Serialization\Exception\UnexpectedTagException',
-            'Invalid XML. Expected one of "params", "fault", got "invalidTag" on depth 1 (context: "<invalidTag/>")'
+            'got "invalidTag" on depth 1 (context: "<invalidTag/>")'
         );
+
         $this->parser->parse($string, $isFault);
     }
 }
