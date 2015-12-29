@@ -1,0 +1,33 @@
+{
+    "name": "fxmlrpc/serialization-integration-tests",
+    "description": "Serialization integration tests FXMLRPC serialization implementations",
+    "license": "MIT",
+    "keywords": ["xmlrpc", "xml", "rpc", "serialization"],
+    "homepage": "http://fxmlrpc.org",
+    "authors": [
+        {
+            "name": "Lars Strojny",
+            "email": "lstrojny@php.net",
+            "homepage": "http://usrportage.de"
+        },
+        {
+            "name": "Márk Sági-Kazár",
+            "email": "mark.sagikazar@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "fxmlrpc/serialization": "*",
+        "phpunit/phpunit": "^4.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fxmlrpc\\Serialization\\Tests\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
