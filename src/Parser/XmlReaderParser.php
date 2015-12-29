@@ -7,7 +7,7 @@ use Fxmlrpc\Serialization\Parser;
 use Fxmlrpc\Serialization\Value\Base64Value;
 
 /**
- * Parser to parse XML responses into its PHP representation using XML Reader extension
+ * Parser to parse XML responses into its PHP representation using XML Reader extension.
  *
  * @author Lars Strojny <lstrojny@php.net>
  */
@@ -61,7 +61,7 @@ final class XmlReaderParser implements Parser
         $nextExpectedElements = 0b000000000000000000000000001;
         $i = 0;
         while ($xml->read()) {
-            $i++;
+            ++$i;
             $nodeType = $xml->nodeType;
 
             if (($nodeType === \XMLReader::COMMENT || $nodeType === \XMLReader::DOC_TYPE) ||
@@ -78,7 +78,7 @@ final class XmlReaderParser implements Parser
 
             $tagName = $xml->localName;
             if ($nextExpectedElements !== null &&
-                ($flag = isset(${'flag' . $tagName}) ? ${'flag' . $tagName} : -1) &&
+                ($flag = isset(${'flag'.$tagName}) ? ${'flag'.$tagName} : -1) &&
                 ($nextExpectedElements & $flag) !== $flag) {
                 throw new UnexpectedTagException(
                     $tagName,
@@ -152,14 +152,14 @@ final class XmlReaderParser implements Parser
                         case 'dateTime.iso8601':
                         case 'dateTime':
                             // Next: value, $tagName, #text
-                            $nextExpectedElements = 0b000000000000000000100010000 | ${'flag' . $tagName};
+                            $nextExpectedElements = 0b000000000000000000100010000 | ${'flag'.$tagName};
                             $type = $tagName;
                             $aggregates[$depth + 1] = '';
                             break;
 
                         case 'nil':
                             // Next: value, $tagName
-                            $nextExpectedElements = 0b001000000000000000000010000 | ${'flag' . $tagName};
+                            $nextExpectedElements = 0b001000000000000000000010000 | ${'flag'.$tagName};
                             $type = $tagName;
                             $aggregates[$depth + 1] = null;
                             break;
@@ -169,14 +169,14 @@ final class XmlReaderParser implements Parser
                         case 'i2':
                         case 'i1':
                             // Next: value, #text, $tagName
-                            $nextExpectedElements = 0b000000000000000000100010000 | ${'flag' . $tagName};
+                            $nextExpectedElements = 0b000000000000000000100010000 | ${'flag'.$tagName};
                             $type = $tagName;
                             $aggregates[$depth + 1] = 0;
                             break;
 
                         case 'boolean':
                             // Next: value, #text, $tagName
-                            $nextExpectedElements = 0b000000000000000000100010000 | ${'flag' . $tagName};
+                            $nextExpectedElements = 0b000000000000000000100010000 | ${'flag'.$tagName};
                             $type = 'boolean';
                             $aggregates[$depth + 1] = false;
                             break;
@@ -185,7 +185,7 @@ final class XmlReaderParser implements Parser
                         case 'float':
                         case 'bigdecimal':
                             // Next: value, #text, $tagName
-                            $nextExpectedElements = 0b000000000000000000100010000 | ${'flag' . $tagName};
+                            $nextExpectedElements = 0b000000000000000000100010000 | ${'flag'.$tagName};
                             $type = $tagName;
                             $aggregates[$depth + 1] = 0.0;
                             break;
