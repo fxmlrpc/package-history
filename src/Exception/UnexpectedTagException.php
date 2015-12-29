@@ -8,11 +8,11 @@ namespace Fxmlrpc\Serialization\Exception;
 final class UnexpectedTagException extends \RuntimeException implements SerializerException
 {
     /**
-     * @param string  $tagName
-     * @param mixed   $elements
-     * @param array   $definedVariables
-     * @param integer $depth
-     * @param string  $xml
+     * @param string $tagName
+     * @param mixed  $elements
+     * @param array  $definedVariables
+     * @param int    $depth
+     * @param string $xml
      */
     public function __construct($tagName, $elements, array $definedVariables, $depth, $xml)
     {

@@ -3,7 +3,7 @@
 namespace Fxmlrpc\Serialization\CodeGenerator;
 
 /**
- * Generates bitmasks for XmlReaderParser
+ * Generates bitmasks for XmlReaderParser.
  *
  * @author Lars Strojny <lstrojny@php.net>
  */
@@ -48,7 +48,7 @@ final class XmlReaderParserBitmaskGenerator
     private $combinedTypes = [];
 
     /**
-     * @var integer
+     * @var int
      */
     private $typeCount = 0;
 
@@ -99,7 +99,7 @@ final class XmlReaderParserBitmaskGenerator
                 'i2',
                 'i1',
                 'base64',
-                'fault'
+                'fault',
             ],
             'expectedAfterParam' => ['param', 'params'],
             'expectedAfterName' => ['value', 'member'],
@@ -113,11 +113,11 @@ final class XmlReaderParserBitmaskGenerator
     private function createBitmaskVariable($type, $bitmask, $prefix = '')
     {
         $variableName = preg_match('/^\w+[\d\w_]*$/', $type)
-            ? 'static $' . $prefix . $type
-            : '${\'' . $prefix . $type . '\'}';
+            ? 'static $'.$prefix.$type
+            : '${\''.$prefix.$type.'\'}';
         $this->values[$type] = $bitmask;
 
-        return $variableName . ' = 0b' . sprintf('%0' . $this->typeCount . 'b', $this->values[$type]) . ';';
+        return $variableName.' = 0b'.sprintf('%0'.$this->typeCount.'b', $this->values[$type]).';';
     }
 
     public function generate()
@@ -146,6 +146,6 @@ EOS;
 
         $commentEnd = '// End of auto-generated code';
 
-        return $commentStart . "\n" . implode("\n", $code) . "\n" . $commentEnd;
+        return $commentStart."\n".implode("\n", $code)."\n".$commentEnd;
     }
 }

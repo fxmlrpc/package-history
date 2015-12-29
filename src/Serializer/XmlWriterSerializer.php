@@ -2,14 +2,13 @@
 
 namespace Fxmlrpc\Serialization\Serializer;
 
-
 use Fxmlrpc\Serialization\Exception\InvalidTypeException;
 use Fxmlrpc\Serialization\ExtensionSupport;
 use Fxmlrpc\Serialization\Serializer;
 use Fxmlrpc\Serialization\Value\Base64;
 
 /**
- * Serializer creates XML from native PHP types using XML Writer extension
+ * Serializer creates XML from native PHP types using XML Writer extension.
  *
  * @author Lars Strojny <lstrojny@php.net>
  */
@@ -94,12 +93,10 @@ final class XmlWriterSerializer implements Serializer, ExtensionSupport
                 $writer->startElement('value');
                 $writer->writeElement('string', $node);
                 $writer->endElement();
-
             } elseif ($type === 'integer') {
                 $writer->startElement('value');
                 $writer->writeElement('int', $node);
                 $writer->endElement();
-
             } elseif ($type === 'double') {
                 if (!isset($precision)) {
                     $precision = ini_get('precision');
@@ -108,19 +105,16 @@ final class XmlWriterSerializer implements Serializer, ExtensionSupport
                 $writer->startElement('value');
                 $writer->writeElement('double', $node);
                 $writer->endElement();
-
             } elseif ($type === 'boolean') {
                 $writer->startElement('value');
                 $writer->writeElement('boolean', $node ? '1' : '0');
                 $writer->endElement();
-
             } elseif ($type === 'NULL') {
                 $writer->startElement('value');
                 $writer->writeElement($nilTagName);
                 $writer->endElement();
-
             } elseif ($type === 'array') {
-                /** Find out if it is a struct or an array */
+                /* Find out if it is a struct or an array */
                 $smallestIndex = 0;
                 foreach ($node as $smallestIndex => &$child) {
                     break;
@@ -148,7 +142,6 @@ final class XmlWriterSerializer implements Serializer, ExtensionSupport
                         $writer->startElement('data');
                     };
                     $toBeVisited[] = $valueNode;
-
                 } else {
                     struct:
                     $toBeVisited[] = $endNode;
@@ -168,22 +161,17 @@ final class XmlWriterSerializer implements Serializer, ExtensionSupport
                     };
                     $toBeVisited[] = $valueNode;
                 }
-
             } elseif ($type === 'object') {
-
                 if ($node instanceof \Closure) {
                     $node();
-
                 } elseif ($node instanceof \DateTime) {
                     $writer->startElement('value');
                     $writer->writeElement('dateTime.iso8601', $node->format('Ymd\TH:i:s'));
                     $writer->endElement();
-
                 } elseif ($node instanceof Base64) {
                     $writer->startElement('value');
-                    $writer->writeElement('base64', $node->getEncoded() . "\n");
+                    $writer->writeElement('base64', $node->getEncoded()."\n");
                     $writer->endElement();
-
                 } else {
                     $node = get_object_vars($node);
                     goto struct;
@@ -200,7 +188,7 @@ final class XmlWriterSerializer implements Serializer, ExtensionSupport
 
         // NativeSerializer does not inject a newline after the declaration
         if ($xml[38] === "\n") {
-            $xml = substr($xml, 0, 38) . substr($xml, 39);
+            $xml = substr($xml, 0, 38).substr($xml, 39);
         }
 
         return $xml;
