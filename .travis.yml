@@ -22,6 +22,9 @@ branches:
         - /^analysis-.*$/
 
 matrix:
+    allow_failure:
+        - php: 7.0
+        - php: hhvm
     fast_finish: true
     include:
         - php: 5.4
