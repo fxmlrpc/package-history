@@ -7,7 +7,7 @@ use Fxmlrpc\Serialization\Tests\SerializerTestCase;
 use Fxmlrpc\Serialization\Value\Base64Value;
 
 /**
- * @author Lars Strojny <lstrojny@php.net>
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
 class Zend1SerializerTest extends SerializerTestCase
 {
